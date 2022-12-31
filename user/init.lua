@@ -229,7 +229,7 @@ local config = {
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua", "pyright", "debugpy" },
+      ensure_installed = { "sumneko_lua", "pyright"},
     },
     -- use mason-null-ls to install and setup configure null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
