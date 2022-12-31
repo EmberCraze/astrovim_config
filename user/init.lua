@@ -220,7 +220,7 @@ local config = {
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua" },
+      ensure_installed = { "sumneko_lua", "pyright", "debugpy" },
     },
     -- use mason-null-ls to install and setup configure null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
@@ -260,34 +260,34 @@ local config = {
   },
 
   -- Modify which-key registration (Use this with mappings table in the above.)
-  ["which-key"] = {
+  -- ["which-key"] = {
     -- Add bindings which show up as group name
-    register = {
+    -- register = {
       -- first key is the mode, n == normal mode
-      n = {
+      -- n = {
         -- second key is the prefix, <leader> prefixes
-        ["<leader>"] = {
+        -- ["<leader>"] = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
-          ["b"] = { name = "Buffer" },
-        },
-      },
-    },
-  },
+          -- ["b"] = { name = "Buffer" },
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
-  polish = function()
+  -- polish = function()
     -- Set key binding
     -- Set autocommands
-    vim.api.nvim_create_augroup("packer_conf", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-      desc = "Sync packer after modifying plugins.lua",
-      group = "packer_conf",
-      pattern = "plugins.lua",
-      command = "source <afile> | PackerSync",
-    })
+    -- vim.api.nvim_create_augroup("packer_conf", { clear = true })
+    -- vim.api.nvim_create_autocmd("BufWritePost", {
+    --   desc = "Sync packer after modifying plugins.lua",
+    --   group = "packer_conf",
+    --   pattern = "plugins.lua",
+    --   command = "source <afile> | PackerSync",
+    -- })
 
     -- Set up custom filetypes
     -- vim.filetype.add {
@@ -301,7 +301,7 @@ local config = {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-  end,
+  -- end,
 }
 
 return config
