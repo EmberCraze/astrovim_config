@@ -29,23 +29,23 @@ local config = {
   colorscheme = "default_theme",
 
   -- Override highlight groups in any theme
-  highlights = {
+  -- highlights = {
     -- duskfox = { -- a table of overrides/changes to the default
     --   Normal = { bg = "#000000" },
     -- },
-    default_theme = function(highlights) -- or a function that returns a new table of colors to set
-      local C = require "default_theme.colors"
-
-      -- New approach instead of diagnostic_style
-      highlights.DiagnosticError.italic = true
-      highlights.DiagnosticHint.italic = true
-      highlights.DiagnosticInfo.italic = true
-      highlights.DiagnosticWarn.italic = true
-
-      highlights.Normal = { fg = C.fg, bg = C.bg }
-      return highlights
-    end,
-  },
+    -- default_theme = function(highlights) -- or a function that returns a new table of colors to set
+    --   local C = require "default_theme.colors"
+    --
+    --   -- New approach instead of diagnostic_style
+    --   highlights.DiagnosticError.italic = true
+    --   highlights.DiagnosticHint.italic = true
+    --   highlights.DiagnosticInfo.italic = true
+    --   highlights.DiagnosticWarn.italic = true
+    --
+    --   highlights.Normal = { fg = C.fg, bg = C.bg }
+    --   return highlights
+    -- end,
+  -- },
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
