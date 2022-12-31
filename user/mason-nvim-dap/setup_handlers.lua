@@ -14,18 +14,17 @@ return {
       {
         type = "python",
         request = "attach",
-        port = tonumber(debug_port),
-        host = host;
-        name = "Remote Attached Debugger",
-        mode = "remote",
-        cwd = vim.fn.getcwd(),
         connect = {
+          port = tonumber(debug_port),
           host = host,
         },
+        mode = "remote",
+        name = "Remote Attached Debugger",
+        cwd = vim.fn.getcwd(),
         pathMappings = {
             {
               localRoot = vim.fn.getcwd(), -- Wherever your Python code lives locally.
-              remoteRoot = "/usr/src/app", -- Wherever your Python code lives in the container.
+              remoteRoot = "/app", -- Wherever your Python code lives in the container.
             };
         };
       },
