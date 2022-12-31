@@ -168,6 +168,11 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      -- window navigation
+      ["<leader>h"] = { "<C-w>h", desc = "Navigate left" },
+      ["<leader>l"] = { "<C-w>l", desc = "Navigate right" },
+      ["<leader>j"] = { "<C-w>j", desc = "Navigate down" },
+      ["<leader>k"] = { "<C-w>k", desc = "Navigate up" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -216,7 +221,11 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua" },
+      ensure_installed = { "lua", "python" },
+    },
+    -- ensure python debugger is installed
+    ["mason-nvim-dap"] = {
+      ensure_installed = { "python" },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
