@@ -1,5 +1,5 @@
 local debug_port = 5678
-local host = "127.0.0.1"
+local host = "0.0.0.0"
 
 return {
   python = function(source_name)
