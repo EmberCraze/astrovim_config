@@ -201,6 +201,18 @@ local config = {
       ["<leader>l"] = { "<C-w>l", desc = "Navigate right" },
       ["<leader>j"] = { "<C-w>j", desc = "Navigate down" },
       ["<leader>k"] = { "<C-w>k", desc = "Navigate up" },
+      ["<TAB>"] = {"<cmd>BufferLineCycleNext<cr>", desc = "Next buffer"},
+      ["<S-TAB>"] = {"<cmd>BufferLineCyclePrev<cr>", desc = "Previous buffer"},
+      ["<leader>qa"] = {
+        function ()
+          for _, e in ipairs(require("bufferline").get_elements().elements) do
+              vim.schedule(function()
+                  vim.cmd("bd ".. e.id)
+              end)
+          end
+        end,
+        desc = "Close all buffers"
+      }
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
