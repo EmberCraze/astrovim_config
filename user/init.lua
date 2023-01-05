@@ -261,7 +261,7 @@ local config = {
     },
     -- use mason-null-ls to install and setup configure null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
-      ensure_installed = { "stylua" },
+      ensure_installed = { "stylua", "black" },
     },
     packer = { -- overrides `require("packer").setup(...)`
       compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
